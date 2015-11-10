@@ -21,3 +21,12 @@ function proud_payment_menu() {
 
   return $items;
 }
+
+
+function proud_payment_provider_keys() {
+  $key = variable_get('stripe_status', 'test');
+  return array(
+    'public' => variable_get('stripe_'. $key .'_publishable', ''),
+    'secret' => variable_get('stripe_'. $key .'_secret', ''),
+  );
+}
