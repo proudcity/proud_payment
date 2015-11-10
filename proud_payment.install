@@ -7,8 +7,8 @@
 /**
  * Implements hook_install().
  */
-function proud_news_install() {
-  $type = 'news';
+function proud_payment_install() {
+  $type = 'payment';
   if (module_exists('proud_core')) {
     // Content Type Permissions
     module_load_include('inc', 'proud_core', 'includes/proud_core.permissions');
@@ -18,7 +18,7 @@ function proud_news_install() {
   	// Content Type settings
   	module_load_include('inc', 'proud_core', 'includes/proud_core.settings');
   	proud_core_content_settings($type);
-  	variable_set("pathauto_node_$type_pattern", "newss/[node:title]");
+  	variable_set("pathauto_node_$type_pattern", "payments/[node:title]");
 
 	  // Enable *_display submodule
   	proud_core_enable_display("proud_$type");
@@ -30,8 +30,8 @@ function proud_news_install() {
 /*
  * Implements hook_uninstall().
  */
-function proud_news_uninstall() {
-  $type = 'news';
+function proud_payment_uninstall() {
+  $type = 'payment';
   if (module_exists('proud_core')) {
   	// Content Type settings
   	module_load_include('inc', 'proud_core', 'includes/proud_core.settings');
