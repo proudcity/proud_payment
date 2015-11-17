@@ -10,7 +10,7 @@ include_once 'proud_payment.features.inc';
  * Implements hook_menu().
  */
 function proud_payment_menu() {
-  $items['admin/proud/payment'] = array(
+  $items['admin/config/proud/payment'] = array(
     'title' => 'Proud payment settings',
     'page callback' => 'drupal_get_form',
     'access arguments' => array('configure proud'),
